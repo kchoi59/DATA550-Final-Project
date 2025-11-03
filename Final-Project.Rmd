@@ -1,0 +1,63 @@
+---
+title: "Final Project"
+author: "Susan Choi"
+date: "`r Sys.Date()`"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+
+# Introduction and Analysis Objectives
+
+This is a breast cancer dataset obtained from the Oncology Institute in Ljubljana, Yugoslavia. It contains 286 samples and 9 variables (age, menopause, tumor size, number of auxiliary lymph nodes involved, capsular penetration, degree of malignancy, breast, breast quadrant, and irradiation), some of which are categorical and some are continuous. The outcome variable is whether the patient had a recurrence of breast cancer. 
+
+I plan to explore factors associated with breast cancer recurrence. I will first start with an explanatory analysis. Then I will conduct a classification model using machine learning algorithms. I will evaluate model performance using metrics like accuracy and sensitivity.
+
+```{r, package, warning=FALSE, message=FALSE, echo=FALSE}
+# load required packages
+library(data.table)
+```
+
+
+```{r, work-directory}
+here::i_am("Final-Project.Rmd")
+```
+
+
+```{r, load-data, echo=TRUE}
+# load data
+dat <- fread(here::here("data/breast-cancer.data"))
+# add column names
+colnames(dat) <- c("class", "age", "menopause", "tumor_size",
+                   "inv_nodes", "node_caps", "deg_malig", "breast",
+                   "breast_quad", "irradiat")
+# show the dataset
+head(dat)
+```
+
+# Data Summary - Table 1
+```{r, make-tables, echo=FALSE}
+table_one <- readRDS(
+  here::here("tables/table_one.rds")
+)
+table_one
+```
+
+The summary table describes the baseline characteristics of 286 breast cancer patients, stratified by recurrence status. Overall, most patients were between ages 40–59, with the majority being premenopausal or >= 40 years at menopause. Tumor size was typically between 20–34 mm, and most patients had 0–2 involved lymph nodes. However, recurrence was significantly associated with higher numbers of involved nodes (p<0.001), presence of node caps (p<0.001), and higher degree of malignancy (p<0.001). Tumor laterality (left vs. right breast) and tumor quadrant were not significantly different between groups, but irradiation was more common among patients with recurrence (36% vs. 18%, p=0.002). These results suggest that nodal involvement, extracapsular extension, malignancy grade, and irradiation are important distinguishing features between recurrence and non-recurrence groups, while demographic factors and breast location showed weaker associations.
+
+
+# Visualization
+```{r, make-figures, echo=FALSE}
+figures <- readRDS(
+  here::here("figures/combined_figure.rds")
+)
+figures
+```
+
+The figure presents proportional bar plots showing recurrence status across all clinical and demographic variables in the dataset. Each panel illustrates the distribution of patients with and without recurrence events within categories of a specific variable. Across most variables (e.g., age, menopause status, tumor size, and breast location), the proportions of recurrence and non-recurrence are relatively similar, with no strong visual separation. However, notable differences are observed for involved nodes, node caps, degree of malignancy, and irradiation, where higher proportions of recurrence events are evident in patients with more nodal involvement, presence of caps, higher malignancy grades, and history of irradiation. These plots highlight the variables most strongly associated with recurrence, complementing the statistical findings in the summary table.
+
+
+
+
+
