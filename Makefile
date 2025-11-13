@@ -12,3 +12,7 @@ figures/combined_figure.rds: code/final_make_figures.R
 .PHONY: clean
 clean:
 	rm -f figures/*.rds && rm -f tables/*.rds && rm -f Final-Project.html
+	
+.PHONY: install
+install:
+    Rscript -e "renv::restore(prompt = FALSE)"
