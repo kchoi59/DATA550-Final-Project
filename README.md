@@ -41,7 +41,7 @@
   
 ### Generate the report
   - Run `make report` in the terminal to generate the report `Final-Project.html` using the docker image.
-  - The final report will be saved in the `/report` folder.
+  - The final report will be saved in the `report/` folder.
   
   
   
