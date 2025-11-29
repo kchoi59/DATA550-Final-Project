@@ -27,7 +27,6 @@
   - contains rules for building the report
   - `make` to build the report
   - `make clean` to remove generated files
-  - `make install` to restore the exact R package versions used in this analysis
 
 ## How to generate the report
 
