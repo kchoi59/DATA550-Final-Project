@@ -38,9 +38,29 @@
 
 ### Docker Image
   - A docker image is available at https://hub.docker.com/repository/docker/kchoi66/final3/general.
+
+### Building the image
+
+If you want to build the image locally from this repository, run the following command from the project root (the folder containing the `Dockerfile`):
+
+```bash
+docker build -t kchoi66/final3 .
+```
+
+You can also pull the image directly from DockerHub without building it yourself:
+
+```bash
+docker pull kchoi66/final3
+```
+
   
 ### Generate the report
-  - Run `make report` in the terminal to generate the report `Final-Project.html` using the docker image.
+  - Run the following command in the terminal to generate the report `Final-Project.html` using the docker image.
+  
+  ```bash
+  make report
+  ```
+  
   - The final report will be saved in the `report/` folder.
   
   
