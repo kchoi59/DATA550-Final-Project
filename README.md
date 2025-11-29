@@ -33,6 +33,20 @@
 
   - Run `make` in the terminal to generate the report `Final-Project.html`.
   
+  
+  
+## How to generate final project report (Dockerized)
+
+### Docker Image
+  - A docker image is available at https://hub.docker.com/repository/docker/kchoi66/final3/general.
+  
+### Generate the report
+  - Run `make report` in the terminal to generate the report `Final-Project.html` using the docker image.
+  - The final report will be saved in the `/report` folder.
+  
+  
+  
+  
 ## Report Summary
 
 The final report (`Final-Project.html`) provides an overview of the Breast Cancer dataset, including:

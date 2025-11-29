@@ -3,6 +3,7 @@ here::i_am("code/final_make_figures.R")
 
 # Load libraries
 library(ggplot2)
+library(data.table)
 library(dplyr)
 library(patchwork) 
 

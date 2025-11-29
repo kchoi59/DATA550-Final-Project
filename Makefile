@@ -1,20 +1,15 @@
-Final-Project.html: Final-Project.Rmd code/final_make_figures.R code/final_make_table1.R data/breast-cancer.data
-	Rscript code/final_render_report.R
+# Makefile for generating the final report using Docker
+# Docker image named kchoi66/final3 is used to build the report
+# The report will be saved in the report/ directory
 
-# create table
-tables/table_one.rds: code/final_make_table1.R
-	Rscript code/final_make_table1.R
+.PHONY: report clean
 
-# create figure
-figures/combined_figure.rds: code/final_make_figures.R
-	Rscript code/final_make_figures.R
-
-.PHONY: clean
-clean:
-	rm -f figures/*.rds && rm -f tables/*.rds && rm -f Final-Project.html
+report: 
+	docker run --rm -v "$$(pwd)/report:/project/report" kchoi66/final3
 	
-.PHONY: install
-install:
-	Rscript -e "renv::restore(prompt = FALSE)"
-    
+clean:
+	rm -f figures/*.rds && rm -f tables/*.rds && rm -f Final-Project.html && rm -f report/*.html
+
+
+
     
