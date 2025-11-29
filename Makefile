@@ -1,4 +1,4 @@
-# Makefile for generating the final report using Docker
+# Makefile for generating the final report using Docker on MacOs
 # Docker image named kchoi66/final3 is used to build the report
 # The report will be saved in the report/ directory
 

@@ -39,7 +39,7 @@
 ### Docker Image
   - A docker image is available at https://hub.docker.com/repository/docker/kchoi66/final3/general.
 
-### Build the image
+### Build the image for MacOs
 
 If you want to build the image locally from this repository, run the following command from the project root (the folder containing the `Dockerfile`):
 
