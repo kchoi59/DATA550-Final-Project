@@ -37,7 +37,7 @@
 ## How to generate final project report (Dockerized)
 
 ### Docker Image
-  - A docker image is available at https://hub.docker.com/repository/docker/kchoi66/final3/tags/latest/sha256-cea60a54771350c744f0e1a9e0e061ba3cbd79e29b7056a17eca284e03d13bbd.
+  - A docker image is available at https://hub.docker.com/r/kchoi66/final3.
 
 ### Build the image for MacOs
 
